@@ -130,4 +130,19 @@ public class FilaVirtual {
         this.ultimaSessao = LocalTime.now();
         return atendidos;
     }
+
+    public int estimarTempoEspera(Visitante v) {
+        int index = this.fila.getIndexOf(v);
+        
+        if (index == -1) { 
+            return 0;
+        }
+
+        double posicao = index + 1; 
+        double capacidade = (double) this.atracao.getCapacidadePorSessao();
+        double tempoSessao = (double) this.atracao.getDuracaoSessaoMinutos();
+        double numSessoes = Math.ceil(posicao / capacidade);
+        
+        return (int) (numSessoes * tempoSessao);
+    }
 }
