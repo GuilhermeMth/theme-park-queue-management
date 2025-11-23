@@ -63,5 +63,17 @@ public class FilaVirtual {
                 '}';
     }
 
+    private int getNivelPrioridadeNumerico(NivelPrioridade nivel) {
 
+        switch (nivel) {
+            case PASSE_ELITE: 
+                return 3;
+            case PASSE_PREMIUM: 
+                return 2;
+            case PASSE_COMUM: 
+                return 1;
+            default:
+                return 1; 
+        }
+    }
 }
