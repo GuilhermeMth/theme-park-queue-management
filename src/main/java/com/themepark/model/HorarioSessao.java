@@ -39,4 +39,17 @@ public class HorarioSessao {
     public int hashCode() {
         return Objects.hash(horaInicio, horaFim);
     }
+
+    public int calcularDuracaoMinutos() {
+    int totalMinutosInicio = this.horaInicio.getHour() * 60 + this.horaInicio.getMinute();
+    int totalMinutosFim = this.horaFim.getHour() * 60 + this.horaFim.getMinute();
+    int duracaoMinutos = totalMinutosFim - totalMinutosInicio;
+
+    if (duracaoMinutos < 0) {
+
+        duracaoMinutos += 1440; 
+    }
+
+    return duracaoMinutos;
+}
 }
