@@ -145,4 +145,13 @@ public class FilaVirtual {
         
         return (int) (numSessoes * tempoSessao);
     }
+
+    public int consultarPosicao(Visitante v) {
+        int index = this.fila.getIndexOf(v); // Retorna o índice base 0
+        
+        if (index >= 0) {
+            return index + 1; // Converte índice (0, 1, 2) para posição (1, 2, 3)
+        }
+        return -1;
+    }
 }
