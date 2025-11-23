@@ -4,6 +4,9 @@ import com.themepark.model.datastructures.LinkedList;
 import com.themepark.model.datastructures.Node;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.NoSuchElementException;
 
 public class FilaVirtual {
     private LinkedList<Visitante> fila;
@@ -105,5 +108,26 @@ public class FilaVirtual {
         }
 
         this.fila.add(index, visitante);
+    }
+
+    public List<Visitante> atenderProximaSessao() {
+        int capacidade = this.atracao.getCapacidadePorSessao();
+        List<Visitante> atendidos = new ArrayList<>();
+
+        for (int i = 0; i < capacidade; i++) {
+            if (this.fila.getSize() > 0) {
+                try {
+                    Visitante atendido = this.fila.removeFirst();
+                    atendidos.add(atendido);
+                } catch (NoSuchElementException e) {
+                    break; 
+                }
+            } else {
+                break;
+            }
+        }
+        
+        this.ultimaSessao = LocalTime.now();
+        return atendidos;
     }
 }
