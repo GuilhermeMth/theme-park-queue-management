@@ -73,4 +73,18 @@ public class Atracao {
     public void setTipo(TipoAtracao tipo) {
         this.tipo = tipo;
     }
+
+    public int getDuracaoSessaoMinutos() {
+        if (this.horariosSessao.getSize() > 0) {
+
+            try {
+                HorarioSessao primeiraSessao = this.horariosSessao.get(0); 
+
+                return primeiraSessao.calcularDuracaoMinutos(); 
+            } catch (IndexOutOfBoundsException e) {
+                return 10; 
+            }
+        }
+        return 10; 
+    }
 }
