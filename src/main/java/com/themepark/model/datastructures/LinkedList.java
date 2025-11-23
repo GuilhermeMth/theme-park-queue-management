@@ -116,6 +116,10 @@ public class LinkedList<T> {
         return size;
     }
 
+    public Node<T> getHead() {
+        return head;
+    }
+
     @Override
     public String toString() {
         return "LinkedList{" +
