@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b76d494-52b3-43e5-a87d-94d125c9ac39" name="Changes" comment="Fix: fixed view directory">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/themepark/model/HorarioSessao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/themepark/model/NivelPrioridade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/themepark/model/TipoAtracao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/themepark/model/TipoIngresso.java" afterDir="false" />
+    <list default="true" id="4b76d494-52b3-43e5-a87d-94d125c9ac39" name="Changes" comment="feat: Implement Atracao and HorarioSessao using custom LinkedList">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/themepark/model/Atracao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/themepark/model/Atracao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/themepark/model/Visitante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/themepark/model/Visitante.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +90,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1763840473959</updated>
-      <workItem from="1763840474923" duration="15488000" />
+      <workItem from="1763840474923" duration="16576000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -120,7 +116,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763851227631</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: Implement Atracao and HorarioSessao using custom LinkedList">
+      <option name="closed" value="true" />
+      <created>1763857633507</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1763857633507</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,6 +134,7 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="Feat: implemented LinkedList and Node classes logic" />
     <MESSAGE value="Fix: fixed view directory" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix: fixed view directory" />
+    <MESSAGE value="feat: Implement Atracao and HorarioSessao using custom LinkedList" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Implement Atracao and HorarioSessao using custom LinkedList" />
   </component>
 </project>
