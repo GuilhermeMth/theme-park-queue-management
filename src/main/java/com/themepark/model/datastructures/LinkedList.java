@@ -120,6 +120,20 @@ public class LinkedList<T> {
         return head;
     }
 
+    public T get(int index) {
+    if (index < 0 || index >= this.size) {
+        throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + this.size);
+    }
+    
+    Node<T> current = this.head;
+    
+    for (int i = 0; i < index; i++) {
+        current = current.getNext();
+    }
+
+    return current.getElement();
+}
+
     @Override
     public String toString() {
         return "LinkedList{" +
