@@ -1,14 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.themepark.controller.CadastroAtracaoController"
-            prefHeight="400.0" prefWidth="600.0">
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.themepark.controller.CadastroAtracaoController"
+      spacing="15" style="-fx-padding: 20;"
+      prefHeight="600.0" prefWidth="700.0">
 
-</AnchorPane>
+    <!-- Título -->
+    <HBox alignment="CENTER" style="-fx-background-color: #2196F3; -fx-padding: 15; -fx-background-radius: 5;">
+        <Label text="🎢 CADASTRAR NOVA ATRAÇÃO" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="18.0"/>
+            </font>
+        </Label>
+    </HBox>
+
+    <!-- Formulário -->
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+        <VBox spacing="15" style="-fx-padding: 10;">
+
+            <!-- Nome -->
+            <VBox spacing="5">
+                <Label text="Nome da Atração *" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="txtNome" promptText="Ex: Montanha Russa Radical"/>
+            </VBox>
+
+            <!-- Tipo -->
+            <VBox spacing="5">
+                <Label text="Tipo *" style="-fx-font-weight: bold;"/>
+                <ComboBox fx:id="cmbTipo" maxWidth="Infinity"/>
+            </VBox>
+
+            <!-- Capacidade e Idade Mínima -->
+            <HBox spacing="15">
+                <VBox spacing="5" HBox.hgrow="ALWAYS">
+                    <Label text="Capacidade por Sessão *" style="-fx-font-weight: bold;"/>
+                    <Spinner fx:id="spnCapacidade" editable="true" maxWidth="Infinity"/>
+                </VBox>
+
+                <VBox spacing="5" HBox.hgrow="ALWAYS">
+                    <Label text="Idade Mínima *" style="-fx-font-weight: bold;"/>
+                    <Spinner fx:id="spnIdadeMinima" editable="true" maxWidth="Infinity"/>
+                </VBox>
+            </HBox>
+
+            <!-- Prioridade -->
+            <VBox spacing="5">
+                <Label text="Nível de Prioridade Aceito *" style="-fx-font-weight: bold;"/>
+                <ComboBox fx:id="cmbPrioridade" maxWidth="Infinity"/>
+                <Label text="Define o tipo mínimo de ingresso aceito nesta atração" style="-fx-font-size: 10; -fx-text-fill: gray;"/>
+            </VBox>
+
+            <!-- Separador -->
+            <Separator/>
+
+            <!-- Horários -->
+            <Label text="Horários de Sessão" style="-fx-font-size: 16; -fx-font-weight: bold;"/>
+
+            <!-- Adicionar Horário -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <VBox spacing="5">
+                    <Label text="Início" style="-fx-font-weight: bold;"/>
+                    <HBox spacing="5">
+                        <Spinner fx:id="spnHoraInicio" prefWidth="70" editable="true"/>
+                        <Label text=":" style="-fx-font-size: 18;"/>
+                        <Spinner fx:id="spnMinutoInicio" prefWidth="70" editable="true"/>
+                    </HBox>
+                </VBox>
+
+                <Label text="até" style="-fx-padding: 20 10 0 10;"/>
+
+                <VBox spacing="5">
+                    <Label text="Fim" style="-fx-font-weight: bold;"/>
+                    <HBox spacing="5">
+                        <Spinner fx:id="spnHoraFim" prefWidth="70" editable="true"/>
+                        <Label text=":" style="-fx-font-size: 18;"/>
+                        <Spinner fx:id="spnMinutoFim" prefWidth="70" editable="true"/>
+                    </HBox>
+                </VBox>
+
+                <Button fx:id="btnAdicionarHorario" text="➕ Adicionar" onAction="#adicionarHorario"
+                        style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-padding: 20 15 20 15;"/>
+            </HBox>
+
+            <!-- Lista de Horários -->
+            <VBox spacing="5">
+                <HBox spacing="10">
+                    <Label text="Horários Adicionados" style="-fx-font-weight: bold;"/>
+                    <Button fx:id="btnRemoverHorario" text="🗑 Remover Selecionado" onAction="#removerHorario"
+                            style="-fx-background-color: #F44336; -fx-text-fill: white;" disable="false"/>
+                </HBox>
+                <ListView fx:id="listaHorarios" prefHeight="120"/>
+                <Label text="Adicione pelo menos um horário de sessão" style="-fx-font-size: 10; -fx-text-fill: gray;"/>
+            </VBox>
+
+        </VBox>
+    </ScrollPane>
+
+    <!-- Botões de Ação -->
+    <Separator/>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="🗑 Limpar" onAction="#limparCampos" prefWidth="100"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button fx:id="btnCancelar" text="❌ Cancelar" onAction="#cancelar" prefWidth="100"/>
+        <Button fx:id="btnSalvar" text="✅ Salvar" onAction="#salvarAtracao" prefWidth="100"
+                style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;"/>
+    </HBox>
+
+    <Label text="* Campos obrigatórios" style="-fx-font-size: 10; -fx-text-fill: gray;"/>
+
+</VBox>

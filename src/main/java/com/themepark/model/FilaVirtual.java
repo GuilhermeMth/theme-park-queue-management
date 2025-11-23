@@ -56,54 +56,56 @@ public class FilaVirtual {
     @Override
     public String toString() {
         return "FilaVirtual{" +
-                "atracao=" + atracao +
-                ", fila=" + fila +
+                "atracao=" + atracao.getNome() +
+                ", tamanhoFila=" + fila.getSize() +
                 ", tempoEsperaMinutos=" + tempoEsperaMinutos +
                 ", ultimaSessao=" + ultimaSessao +
                 '}';
     }
 
-    private int getNivelPrioridadeNumerico(NivelPrioridade nivel) {
-
+    // CORRIGIDO: Método agora consistente - usa apenas valores numéricos
+    private int convertePrioridadeParaNumero(NivelPrioridade nivel) {
         switch (nivel) {
-            case PASSE_ELITE: 
+            case PASSE_ELITE:
                 return 3;
-            case PASSE_PREMIUM: 
+            case PASSE_PREMIUM:
                 return 2;
-            case PASSE_COMUM: 
-                return 1;
             default:
-                return 1; 
+                return 1;
         }
     }
 
+    // CORRIGIDO: Lógica de adição agora completamente consistente
     public void adicionarVisitante(Visitante visitante) {
-        int nivelNovo = visitante.getTipoIngresso().getNivelPrioridade();
-        
-        NivelPrioridade minimoAceitoEnum = this.atracao.getPrioridadeAceita();
-        int nivelMinimo = getNivelPrioridadeNumerico(minimoAceitoEnum);
+        int nivelVisitante = visitante.getTipoIngresso().getNivelPrioridade();
 
-        if (nivelNovo < nivelMinimo) {
-            throw new IllegalArgumentException("Ingresso (" + visitante.getTipoIngresso() + 
-                ") não atende ao mínimo (" + minimoAceitoEnum + ") para esta fila.");
+        NivelPrioridade minimoAceitoEnum = this.atracao.getPrioridadeAceita();
+        int nivelMinimo = convertePrioridadeParaNumero(minimoAceitoEnum);
+
+        if (nivelVisitante < nivelMinimo) {
+            throw new IllegalArgumentException("Ingresso (" + visitante.getTipoIngresso() +
+                    ") não atende ao mínimo (" + minimoAceitoEnum + ") para esta fila.");
         }
 
-        if (this.fila.getSize() == 0 || nivelNovo == TipoIngresso.COMUM.getNivelPrioridade()) {
+        // Se a fila está vazia ou é ingresso comum, adiciona no final
+        if (this.fila.getSize() == 0 || nivelVisitante == TipoIngresso.COMUM.getNivelPrioridade()) {
             this.fila.addLast(visitante);
             return;
         }
 
+        // Procura a posição correta baseada na prioridade
         int index = 0;
-        Node<Visitante> current = this.fila.getHead(); 
+        Node<Visitante> current = this.fila.getHead();
 
         while (current != null) {
             int nivelAtual = current.getElement().getTipoIngresso().getNivelPrioridade();
-            
-            if (nivelNovo > nivelAtual) { 
-                break; 
+
+            // Se o novo visitante tem maior prioridade, insere aqui
+            if (nivelVisitante > nivelAtual) {
+                break;
             }
 
-            current = current.getNext(); 
+            current = current.getNext();
             index++;
         }
 
@@ -120,37 +122,37 @@ public class FilaVirtual {
                     Visitante atendido = this.fila.removeFirst();
                     atendidos.add(atendido);
                 } catch (NoSuchElementException e) {
-                    break; 
+                    break;
                 }
             } else {
                 break;
             }
         }
-        
+
         this.ultimaSessao = LocalTime.now();
         return atendidos;
     }
 
     public int estimarTempoEspera(Visitante v) {
         int index = this.fila.getIndexOf(v);
-        
-        if (index == -1) { 
+
+        if (index == -1) {
             return 0;
         }
 
-        double posicao = index + 1; 
+        double posicao = index + 1;
         double capacidade = (double) this.atracao.getCapacidadePorSessao();
         double tempoSessao = (double) this.atracao.getDuracaoSessaoMinutos();
         double numSessoes = Math.ceil(posicao / capacidade);
-        
+
         return (int) (numSessoes * tempoSessao);
     }
 
     public int consultarPosicao(Visitante v) {
-        int index = this.fila.getIndexOf(v); // Retorna o índice base 0
-        
+        int index = this.fila.getIndexOf(v);
+
         if (index >= 0) {
-            return index + 1; // Converte índice (0, 1, 2) para posição (1, 2, 3)
+            return index + 1;
         }
         return -1;
     }

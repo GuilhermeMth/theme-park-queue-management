@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.themepark.controller.CadastroVisitanteController"
+      spacing="15" style="-fx-padding: 20;"
+      prefHeight="500.0" prefWidth="600.0">
+
+    <!-- Título -->
+    <HBox alignment="CENTER" style="-fx-background-color: #4CAF50; -fx-padding: 15; -fx-background-radius: 5;">
+        <Label text="👤 CADASTRAR NOVO VISITANTE" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="18.0"/>
+            </font>
+        </Label>
+    </HBox>
+
+    <!-- Formulário -->
+    <VBox spacing="15" style="-fx-padding: 10;" VBox.vgrow="ALWAYS">
+
+        <!-- Nome Completo -->
+        <VBox spacing="5">
+            <Label text="Nome Completo *" style="-fx-font-weight: bold;"/>
+            <TextField fx:id="txtNome" promptText="Digite o nome completo"/>
+        </VBox>
+
+        <!-- CPF -->
+        <VBox spacing="5">
+            <Label text="CPF *" style="-fx-font-weight: bold;"/>
+            <TextField fx:id="txtCpf" promptText="000.000.000-00" onKeyReleased="#formatarCpfAutomatico"/>
+            <Label text="Digite apenas os números do CPF" style="-fx-font-size: 10; -fx-text-fill: gray;"/>
+        </VBox>
+
+        <!-- Data de Nascimento -->
+        <VBox spacing="5">
+            <Label text="Data de Nascimento *" style="-fx-font-weight: bold;"/>
+            <DatePicker fx:id="dataNascimento" promptText="Selecione a data" maxWidth="Infinity"/>
+        </VBox>
+
+        <!-- Email -->
+        <VBox spacing="5">
+            <Label text="Email *" style="-fx-font-weight: bold;"/>
+            <TextField fx:id="txtEmail" promptText="exemplo@email.com"/>
+        </VBox>
+
+        <!-- Tipo de Ingresso -->
+        <VBox spacing="5">
+            <Label text="Tipo de Ingresso *" style="-fx-font-weight: bold;"/>
+            <ComboBox fx:id="cmbTipoIngresso" maxWidth="Infinity"/>
+            <Label text="COMUM: Acesso padrão | PREMIUM: Prioridade média | ELITE: Prioridade máxima"
+                   style="-fx-font-size: 10; -fx-text-fill: gray;" wrapText="true"/>
+        </VBox>
+
+    </VBox>
+
+    <!-- Separador -->
+    <Separator/>
+
+    <!-- Botões de Ação -->
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button fx:id="btnLimpar" text="🗑 Limpar" onAction="#limparCampos" prefWidth="100"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button fx:id="btnCancelar" text="❌ Cancelar" onAction="#cancelar" prefWidth="100"/>
+        <Button fx:id="btnSalvar" text="✅ Salvar" onAction="#salvarVisitante" prefWidth="100"
+                style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;"/>
+    </HBox>
+
+    <Label text="* Campos obrigatórios" style="-fx-font-size: 10; -fx-text-fill: gray;"/>
+
+</VBox>

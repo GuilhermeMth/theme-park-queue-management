@@ -7,9 +7,10 @@ public class HorarioSessao {
     private final LocalTime horaInicio;
     private final LocalTime horaFim;
 
-    public HorarioSessao(LocalTime horaFim, LocalTime horaInicio) {
-        this.horaFim = horaFim;
+    // CORRIGIDO: Ordem dos parâmetros agora está correta
+    public HorarioSessao(LocalTime horaInicio, LocalTime horaFim) {
         this.horaInicio = horaInicio;
+        this.horaFim = horaFim;
     }
 
     public LocalTime getHoraFim() {
@@ -23,8 +24,8 @@ public class HorarioSessao {
     @Override
     public String toString() {
         return "HorarioSessao{" +
-                "horaFim=" + horaFim +
-                ", horaInicio=" + horaInicio +
+                "horaInicio=" + horaInicio +
+                ", horaFim=" + horaFim +
                 '}';
     }
 
@@ -41,15 +42,14 @@ public class HorarioSessao {
     }
 
     public int calcularDuracaoMinutos() {
-    int totalMinutosInicio = this.horaInicio.getHour() * 60 + this.horaInicio.getMinute();
-    int totalMinutosFim = this.horaFim.getHour() * 60 + this.horaFim.getMinute();
-    int duracaoMinutos = totalMinutosFim - totalMinutosInicio;
+        int totalMinutosInicio = this.horaInicio.getHour() * 60 + this.horaInicio.getMinute();
+        int totalMinutosFim = this.horaFim.getHour() * 60 + this.horaFim.getMinute();
+        int duracaoMinutos = totalMinutosFim - totalMinutosInicio;
 
-    if (duracaoMinutos < 0) {
+        if (duracaoMinutos < 0) {
+            duracaoMinutos += 1440;
+        }
 
-        duracaoMinutos += 1440; 
+        return duracaoMinutos;
     }
-
-    return duracaoMinutos;
-}
 }

@@ -4,10 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b76d494-52b3-43e5-a87d-94d125c9ac39" name="Changes" comment="feat: completed Visitante class">
+    <list default="true" id="4b76d494-52b3-43e5-a87d-94d125c9ac39" name="Changes" comment="feat: add getNivelprioridade in enum">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/themepark/controller/CadastroVisitanteController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/themepark/model/Estatisticas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/themepark/model/SistemaParque.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/themepark/model/StatusReserva.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/themepark/view/cadastro-visitante-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/themepark/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/themepark/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/themepark/SystemInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/themepark/controller/CadastroAtracaoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/themepark/controller/CadastroAtracaoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/themepark/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/themepark/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/themepark/controller/PortalVisitanteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/themepark/controller/PortalVisitanteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/themepark/model/Atracao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/themepark/model/Atracao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/themepark/model/FilaVirtual.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/themepark/model/FilaVirtual.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/themepark/model/TipoIngresso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/themepark/model/TipoIngresso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/themepark/model/HorarioSessao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/themepark/model/HorarioSessao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/themepark/model/Reserva.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/themepark/model/Reserva.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/themepark/model/Visitante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/themepark/model/Visitante.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/themepark/view/cadastro-atracao-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/themepark/view/cadastro-atracao-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/themepark/view/main-dashboard-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/themepark/view/main-dashboard-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/themepark/view/portal-visitante-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/themepark/view/portal-visitante-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,9 +36,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -49,28 +68,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.App.executor&quot;: &quot;Run&quot;,
-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.App.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/com/themepark/view" />
@@ -92,7 +114,7 @@
       <option name="presentableId" value="Default" />
       <updated>1763840473959</updated>
       <workItem from="1763840474923" duration="17195000" />
-      <workItem from="1763909497805" duration="1478000" />
+      <workItem from="1763909497805" duration="9572000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -134,7 +156,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763858649534</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat: add getNivelprioridade in enum">
+      <option name="closed" value="true" />
+      <created>1763911040276</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1763911040276</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,6 +176,7 @@
     <MESSAGE value="Fix: fixed view directory" />
     <MESSAGE value="feat: Implement Atracao and HorarioSessao using custom LinkedList" />
     <MESSAGE value="feat: completed Visitante class" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: completed Visitante class" />
+    <MESSAGE value="feat: add getNivelprioridade in enum" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add getNivelprioridade in enum" />
   </component>
 </project>
