@@ -219,7 +219,7 @@ public class MainController {
     }
 
     @FXML
-    private void atualizarDados() {
+    public void atualizarDados() {
         carregarDados();
         atualizarEstatisticas();
         mostrarInformacao("Atualizado", "Dados atualizados com sucesso!");

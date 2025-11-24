@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.themepark.controller.MainController"
+      VBox.vgrow="ALWAYS">
+    <TabPane tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+
+        <Tab text="Dashboard">
+            <VBox spacing="15" style="-fx-padding: 15;">
+                <GridPane hgap="15" vgap="15">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="20"/>
+                        <ColumnConstraints percentWidth="20"/>
+                        <ColumnConstraints percentWidth="20"/>
+                        <ColumnConstraints percentWidth="20"/>
+                        <ColumnConstraints percentWidth="20"/>
+                    </columnConstraints>
+                    <VBox style="-fx-background-color: #4CAF50; -fx-background-radius: 10; -fx-padding: 15;" GridPane.columnIndex="0">
+                        <Label text="Total de Visitantes" textFill="WHITE">
+                            <font><Font size="12.0"/></font>
+                        </Label>
+                        <Label fx:id="lblTotalVisitantes" text="0" textFill="WHITE">
+                            <font><Font name="System Bold" size="28.0"/></font>
+                        </Label>
+                    </VBox>
+                    <VBox style="-fx-background-color: #2196F3; -fx-background-radius: 10; -fx-padding: 15;" GridPane.columnIndex="1">
+                        <Label text="Total de Atrações" textFill="WHITE">
+                            <font><Font size="12.0"/></font>
+                        </Label>
+                        <Label fx:id="lblTotalAtracoes" text="0" textFill="WHITE">
+                            <font><Font name="System Bold" size="28.0"/></font>
+                        </Label>
+                    </VBox>
+                    <VBox style="-fx-background-color: #FF9800; -fx-background-radius: 10; -fx-padding: 15;" GridPane.columnIndex="2">
+                        <Label text="Reservas Ativas" textFill="WHITE">
+                            <font><Font size="12.0"/></font>
+                        </Label>
+                        <Label fx:id="lblReservasAtivas" text="0" textFill="WHITE">
+                            <font><Font name="System Bold" size="28.0"/></font>
+                        </Label>
+                    </VBox>
+                    <VBox style="-fx-background-color: #9C27B0; -fx-background-radius: 10; -fx-padding: 15;" GridPane.columnIndex="3">
+                        <Label text="Reservas Hoje" textFill="WHITE">
+                            <font><Font size="12.0"/></font>
+                        </Label>
+                        <Label fx:id="lblReservasHoje" text="0" textFill="WHITE">
+                            <font><Font name="System Bold" size="28.0"/></font>
+                        </Label>
+                    </VBox>
+                    <VBox style="-fx-background-color: #F44336; -fx-background-radius: 10; -fx-padding: 15;" GridPane.columnIndex="4">
+                        <Label text="Pessoas em Filas" textFill="WHITE">
+                            <font><Font size="12.0"/></font>
+                        </Label>
+                        <Label fx:id="lblPessoasEmFilas" text="0" textFill="WHITE">
+                            <font><Font name="System Bold" size="28.0"/></font>
+                        </Label>
+                    </VBox>
+                </GridPane>
+
+                <HBox spacing="15" VBox.vgrow="NEVER">
+                    <VBox spacing="5" style="-fx-border-color: #DDDDDD; -fx-border-width: 1; -fx-padding: 10;" HBox.hgrow="ALWAYS">
+                        <Label text="🏆 Atração Mais Disputada" style="-fx-font-weight: bold;"/>
+                        <Label fx:id="lblAtracaoMaisDisputa" text="N/A"/>
+                    </VBox>
+                    <VBox spacing="5" style="-fx-border-color: #DDDDDD; -fx-border-width: 1; -fx-padding: 10;" HBox.hgrow="ALWAYS">
+                        <Label text="👤 Visitante Mais Ativo" style="-fx-font-weight: bold;"/>
+                        <Label fx:id="lblVisitanteMaisAtivo" text="N/A"/>
+                    </VBox>
+                </HBox>
+
+                <VBox spacing="10" VBox.vgrow="ALWAYS">
+                    <HBox spacing="10">
+                        <Label text="Relatório Completo" style="-fx-font-size: 16; -fx-font-weight: bold;"/>
+                        <Button text="Gerar Relatório" onAction="#gerarRelatorio"/>
+                    </HBox>
+                    <TextArea fx:id="txtRelatorio" editable="false" VBox.vgrow="ALWAYS"/>
+                </VBox>
+
+            </VBox>
+        </Tab>
+
+        <Tab text="Atrações">
+            <VBox spacing="10" style="-fx-padding: 15;">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Button text="➕ Nova Atração" onAction="#abrirCadastroAtracao" style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+                    <Button text="🗑 Remover Atração" onAction="#removerAtracao" style="-fx-background-color: #F44336; -fx-text-fill: white;"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button text="🔄 Atualizar" onAction="#atualizarDados"/>
+                </HBox>
+                <TableView fx:id="tabelaAtracoes" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colNome" text="Nome" prefWidth="200"/>
+                        <TableColumn fx:id="colTipo" text="Tipo" prefWidth="150"/>
+                        <TableColumn fx:id="colCapacidade" text="Capacidade" prefWidth="100"/>
+                        <TableColumn fx:id="colIdadeMinima" text="Idade Mín." prefWidth="100"/>
+                        <TableColumn fx:id="colPrioridade" text="Prioridade" prefWidth="150"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </Tab>
+
+        <Tab text="Filas Virtuais">
+            <VBox spacing="10" style="-fx-padding: 15;">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Button fx:id="btnProcessarSessao" text="▶️ Processar Sessão" onAction="#processarSessaoSelecionada" style="-fx-background-color: #2196F3; -fx-text-fill: white;"/>
+                    <Label text="(Selecione uma fila e clique para processar a próxima sessão)"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button text="🔄 Atualizar" onAction="#atualizarDados"/>
+                </HBox>
+
+                <TableView fx:id="tabelaFilas" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colAtracaoFila" text="Atração" prefWidth="300"/>
+                        <TableColumn fx:id="colTamanhoFila" text="Pessoas na Fila" prefWidth="150"/>
+                        <TableColumn fx:id="colTempoEspera" text="Tempo Espera (min)" prefWidth="150"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </Tab>
+
+    </TabPane>
+
+</VBox>

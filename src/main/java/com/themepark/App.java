@@ -8,10 +8,12 @@ import javafx.stage.Stage;
 
 import com.themepark.model.*;
 
+import java.io.IOException;
 import java.time.LocalTime;
 
 /**
  * JavaFX App - Sistema de Gerenciamento de Parque Temático
+ * * ATENÇÃO: Carregando agora o 'app-central-view.fxml', que é o novo container com abas.
  */
 public class App extends Application {
 
@@ -20,14 +22,21 @@ public class App extends Application {
         // Carrega dados de exemplo (opcional)
         carregarDadosExemplo();
 
-        // Carrega a tela principal
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/themepark/view/main-dashboard-view.fxml"));
-        Parent root = loader.load();
+        try {
+            // Carrega a TELA PRINCIPAL: o novo container com as abas do Parque e Visitante.
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/themepark/view/app-central-view.fxml"));
+            Parent root = loader.load();
 
-        Scene scene = new Scene(root, 1200, 700);
-        stage.setTitle("🎡 Sistema de Gerenciamento do Parque Temático");
-        stage.setScene(scene);
-        stage.show();
+            // Configuração da janela
+            Scene scene = new Scene(root, 1300, 750); // Aumentado o tamanho para o novo layout de abas
+            stage.setTitle("🎡 Sistema de Gerenciamento do Parque Temático");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            System.err.println("❌ Erro ao carregar a view central (app-central-view.fxml). Verifique se o arquivo FXML existe e se o caminho está correto.");
+            e.printStackTrace();
+            throw e; // Relança a exceção para que o JavaFX a capture
+        }
     }
 
     /**
@@ -116,8 +125,8 @@ public class App extends Application {
             Visitante v3 = new Visitante(
                     "11122233344",
                     "10/12/1995",
-                    "pedro.costa@email.com",
                     "Pedro Costa",
+                    "pedro.costa@email.com",
                     TipoIngresso.ELITE
             );
             sistema.cadastrarVisitante(v3);
@@ -125,8 +134,8 @@ public class App extends Application {
             Visitante v4 = new Visitante(
                     "55566677788",
                     "05/05/2010",
-                    "ana.oliveira@email.com",
                     "Ana Oliveira",
+                    "ana.oliveira@email.com",
                     TipoIngresso.COMUM
             );
             sistema.cadastrarVisitante(v4);
