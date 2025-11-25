@@ -75,15 +75,23 @@ public class MainController {
     }
 
     private void carregarDados() {
-        // Carregar atrações
+        // --- Atualização da Tabela de Atrações ---
         List<Atracao> atracoes = sistema.listarAtracoes();
+        
+        // 1. Limpar e preencher a lista.
+        // Se você não tiver a ObservableList como campo de classe, crie-a localmente e reatribua:
         ObservableList<Atracao> atracoesObservable = FXCollections.observableArrayList(atracoes);
         tabelaAtracoes.setItems(atracoesObservable);
+        
+        // 2. FORÇAR O REFRESH (Solução mais direta)
+        tabelaAtracoes.refresh(); 
 
-        // Carregar filas
+        // --- Atualização da Tabela de Filas ---
         List<FilaVirtual> filas = sistema.listarFilasVirtuais();
         ObservableList<FilaVirtual> filasObservable = FXCollections.observableArrayList(filas);
         tabelaFilas.setItems(filasObservable);
+        
+        tabelaFilas.refresh();
     }
 
     private void atualizarEstatisticas() {
