@@ -13,7 +13,7 @@
 
     <!-- Título -->
     <HBox alignment="CENTER" style="-fx-background-color: #2196F3; -fx-padding: 15; -fx-background-radius: 5;">
-        <Label text="🎢 CADASTRAR NOVA ATRAÇÃO" textFill="WHITE">
+        <Label text="CADASTRAR NOVA ATRAÇÃO" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="18.0"/>
             </font>
@@ -84,7 +84,7 @@
                     </HBox>
                 </VBox>
 
-                <Button fx:id="btnAdicionarHorario" text="➕ Adicionar" onAction="#adicionarHorario"
+                <Button fx:id="btnAdicionarHorario" text="Adicionar" onAction="#adicionarHorario"
                         style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-padding: 20 15 20 15;"/>
             </HBox>
 
@@ -108,7 +108,7 @@
     <HBox spacing="10" alignment="CENTER_RIGHT">
         <Button text="🗑 Limpar" onAction="#limparCampos" prefWidth="100"/>
         <Region HBox.hgrow="ALWAYS"/>
-        <Button fx:id="btnCancelar" text="❌ Cancelar" onAction="#cancelar" prefWidth="100"/>
+        <Button fx:id="btnCancelar" text="Cancelar" onAction="#cancelar" prefWidth="100"/>
         <Button fx:id="btnSalvar" text="✅ Salvar" onAction="#salvarAtracao" prefWidth="100"
                 style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;"/>
     </HBox>

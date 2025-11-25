@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.themepark.controller.AppCentralController"
+            prefHeight="750.0" prefWidth="1300.0">
+
+    <top>
+        <VBox>
+            <MenuBar>
+                <Menu text="Arquivo">
+                    <MenuItem text="Sair" onAction="#sairAplicacao"/>
+                </Menu>
+                <Menu text="Cadastros">
+                    <MenuItem text="Nova Atração" onAction="#abrirCadastroAtracao"/>
+                    <MenuItem text="Novo Visitante" onAction="#abrirCadastroVisitante"/>
+                </Menu>
+                <Menu text="Ajuda">
+                    <MenuItem text="Sobre"/>
+                </Menu>
+            </MenuBar>
+
+            <HBox alignment="CENTER" style="-fx-background-color: #00897B; -fx-padding: 15;">
+                <Label text="SISTEMA DE GERENCIAMENTO DE PARQUE TEMÁTICO" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="24.0"/>
+                    </font>
+                </Label>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE" fx:id="tabPanePrincipal">
+
+            <Tab text="Painel de Controle (Parque)">
+                <fx:include fx:id="painelParque" source="painel-parque-view.fxml"/>
+            </Tab>
+
+            <Tab text="Portal do Visitante">
+                <fx:include fx:id="portalVisitante" source="portal-visitante-view.fxml"/>
+            </Tab>
+
+        </TabPane>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" style="-fx-background-color: #EEEEEE; -fx-padding: 10;">
+            <Label text="Sistema de Gerenciamento de Parque Temático v1.0"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

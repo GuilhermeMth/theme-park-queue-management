@@ -27,7 +27,7 @@ public class LinkedList<T> {
     }
 
     public void add(int index, T element) {
-        if (index < 0 || index > this.size) { // A verificação deve usar this.size
+        if (index < 0 || index > this.size) {
             throw new IndexOutOfBoundsException("Index out of bounds. Must be between 0 and " + this.size);
         }
 
@@ -42,7 +42,7 @@ public class LinkedList<T> {
             }
         } else {
             Node<T> current = this.head;
-            // Percorre até o nó ANTERIOR ao índice (index - 1)
+            
             for (int i = 0; i < index - 1; i++) {
                 current = current.getNext();
             }
@@ -50,7 +50,7 @@ public class LinkedList<T> {
             newNode.setNext(current.getNext());
             current.setNext(newNode);
 
-            if (index == this.size) { // Verifica se é o novo final
+            if (index == this.size) {
                 this.tail = newNode;
             }
         }

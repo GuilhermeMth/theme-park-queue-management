@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 public class Visitante {
     private String nome;
     private String cpf;
-    private LocalDate dataNascimento; // CORRIGIDO: agora usa LocalDate
+    private LocalDate dataNascimento;
     private String email;
     private TipoIngresso tipoIngresso;
 
@@ -29,7 +29,6 @@ public class Visitante {
         this.tipoIngresso = tipoIngresso;
     }
 
-    // Construtor alternativo que aceita data como String (para manter compatibilidade)
     public Visitante(String cpf, String dataNascimentoStr, String email, String nome, TipoIngresso tipoIngresso) {
         this(cpf, parseData(dataNascimentoStr), email, nome, tipoIngresso);
     }
