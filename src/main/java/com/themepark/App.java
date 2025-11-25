@@ -125,8 +125,8 @@ public class App extends Application {
             Visitante v3 = new Visitante(
                     "11122233344",
                     "10/12/1995",
-                    "Pedro Costa",
                     "pedro.costa@email.com",
+                    "Pedro Costa",
                     TipoIngresso.ELITE
             );
             sistema.cadastrarVisitante(v3);
@@ -134,8 +134,8 @@ public class App extends Application {
             Visitante v4 = new Visitante(
                     "55566677788",
                     "05/05/2010",
-                    "Ana Oliveira",
                     "ana.oliveira@email.com",
+                    "Ana Oliveira",
                     TipoIngresso.COMUM
             );
             sistema.cadastrarVisitante(v4);

@@ -64,11 +64,11 @@
 
                 <HBox spacing="15" VBox.vgrow="NEVER">
                     <VBox spacing="5" style="-fx-border-color: #DDDDDD; -fx-border-width: 1; -fx-padding: 10;" HBox.hgrow="ALWAYS">
-                        <Label text="🏆 Atração Mais Disputada" style="-fx-font-weight: bold;"/>
+                        <Label text="Atração Mais Disputada" style="-fx-font-weight: bold;"/>
                         <Label fx:id="lblAtracaoMaisDisputa" text="N/A"/>
                     </VBox>
                     <VBox spacing="5" style="-fx-border-color: #DDDDDD; -fx-border-width: 1; -fx-padding: 10;" HBox.hgrow="ALWAYS">
-                        <Label text="👤 Visitante Mais Ativo" style="-fx-font-weight: bold;"/>
+                        <Label text="Visitante Mais Ativo" style="-fx-font-weight: bold;"/>
                         <Label fx:id="lblVisitanteMaisAtivo" text="N/A"/>
                     </VBox>
                 </HBox>
@@ -87,10 +87,10 @@
         <Tab text="Atrações">
             <VBox spacing="10" style="-fx-padding: 15;">
                 <HBox spacing="10" alignment="CENTER_LEFT">
-                    <Button text="➕ Nova Atração" onAction="#abrirCadastroAtracao" style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
-                    <Button text="🗑 Remover Atração" onAction="#removerAtracao" style="-fx-background-color: #F44336; -fx-text-fill: white;"/>
+                    <Button text="Nova Atração" onAction="#abrirCadastroAtracao" style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+                    <Button text="Remover Atração" onAction="#removerAtracao" style="-fx-background-color: #F44336; -fx-text-fill: white;"/>
                     <Region HBox.hgrow="ALWAYS"/>
-                    <Button text="🔄 Atualizar" onAction="#atualizarDados"/>
+                    <Button text="Atualizar" onAction="#atualizarDados"/>
                 </HBox>
                 <TableView fx:id="tabelaAtracoes" VBox.vgrow="ALWAYS">
                     <columns>
@@ -107,10 +107,10 @@
         <Tab text="Filas Virtuais">
             <VBox spacing="10" style="-fx-padding: 15;">
                 <HBox spacing="10" alignment="CENTER_LEFT">
-                    <Button fx:id="btnProcessarSessao" text="▶️ Processar Sessão" onAction="#processarSessaoSelecionada" style="-fx-background-color: #2196F3; -fx-text-fill: white;"/>
+                    <Button fx:id="btnProcessarSessao" text="▶Processar Sessão" onAction="#processarSessaoSelecionada" style="-fx-background-color: #2196F3; -fx-text-fill: white;"/>
                     <Label text="(Selecione uma fila e clique para processar a próxima sessão)"/>
                     <Region HBox.hgrow="ALWAYS"/>
-                    <Button text="🔄 Atualizar" onAction="#atualizarDados"/>
+                    <Button text="Atualizar" onAction="#atualizarDados"/>
                 </HBox>
 
                 <TableView fx:id="tabelaFilas" VBox.vgrow="ALWAYS">
